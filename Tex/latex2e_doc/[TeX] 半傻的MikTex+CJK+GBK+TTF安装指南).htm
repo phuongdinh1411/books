@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.ctex.org/documents/maillist/msg00008.html -->
+<!-- MHonArc v2.5.5 --><!--X-Subject: [TeX] 半傻的MikTex+CJK+GBK+TTF安装指南:) --><!--X-From-R13: raretl <bonfrN163.arg> --><!--X-Date: Thu, 13 Jan 2000 22:38:41 +0800 --><!--X-Message-Id: 17936.000113@163.net --><!--X-Content-Type: text/plain --><!--X-Head-End--><HTML><HEAD><TITLE>[TeX] 半傻的MikTex+CJK+GBK+TTF安装指南:)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK rev=made 
+href="mailto:obase@163.net">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff><!--X-Body-Begin--><!--X-User-Header--><!--X-User-Header-End--><!--X-TopPNI--><!--X-TopPNI-End--><!--X-MsgBody--><!--X-Subject-Header-Begin-->
+<H1>[TeX] 半傻的MikTex+CJK+GBK+TTF安装指南:)</H1>
+<HR>
+<!--X-Subject-Header-End--><!--X-Head-of-Message-->
+<UL>
+  <LI><EM>To</EM>: <A href="mailto:tex@ctex.dhs.org">tex@ctex.dhs.org</A> 
+  <LI><EM>Subject</EM>: [TeX] 半傻的MikTex+CJK+GBK+TTF安装指南:) 
+  <LI><EM>From</EM>: energy &lt;<A 
+  href="mailto:obase@163.net">obase@163.net</A>&gt; 
+  <LI><EM>Date</EM>: Thu, 13 Jan 2000 22:28:27 +0800 </LI></UL><!--X-Head-of-Message-End--><!--X-Head-Body-Sep-Begin-->
+<TABLE border=0>
+  <TBODY>
+  <TR>
+    <TD>[<A href="http://www.ctex.org/documents/maillist/msg00007.html">Date 
+      Prev</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/index79.html#00008">Date 
+      Index</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/msg00009.html">Date Next</A>] 
+    </TD>
+    <TD width=20></TD>
+    <TD>[<A href="http://www.ctex.org/documents/maillist/msg00007.html">Thread 
+      Prev</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/threads.html#00008">Thread 
+      Index</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/msg00009.html">Thread 
+      Next</A>] </TD></TR></TBODY></TABLE>
+<HR>
+<!--X-Head-Body-Sep-End--><!--X-Body-of-Message--><PRE><A href="http://obase.163.net/tex/">http://obase.163.net/tex/</A>
+
+因为做了个gbkenc的exe程序，做字库的步骤可以在Windows下完成。
+字体文件直接用TTF字库生成。当然已经做好了几个常用的，可以马上下载。
+因为我目前还是MODEM拨号连接，没办法上到FTP，请谅解。
+我觉得这个方法已经够简单了，比以前eggs教的做type1字库方便多了:)
+不过这也不是我发明的哦，是按照aloft的办法做的:P
+==================================================================
+
+Windows9x/NT 中文LaTeX安装简明指南
+
+1. 简介
+
+以前eggs, aloft等介绍的安装方法似乎倾向于Linux/Unix, 尤其是在字体
+文件建立方面, 不能在Windows下完成. 本文介绍如何在纯粹的Windows环境
+下安装MikTeX和CJK, 直接使用TTF中文字体, 用LaTeX处理中文文档.
+
+MikTeX是Windows下的TeX免费排版软件, 最新版本可以在这里下载:
+    <A href="http://www.miktex.de/">http://www.miktex.de/</A>
+国内:
+    <A href="ftp://ftp.lib.pku.edu.cn/incoming/MikTeX_1.20e_Release">ftp://ftp.lib.pku.edu.cn/incoming/MikTeX_1.20e_Release</A>
+
+CJK是用于处理含中日韩文字的tex文件的软件, 最新版本可以在这里下载:
+    <A href="ftp://ftp.ffii.org/pub/cjk/devel/cjk-current.tar.gz">ftp://ftp.ffii.org/pub/cjk/devel/cjk-current.tar.gz</A>
+
+本安装包已经包含了CJK的必要内容, 如果不深入研究的话, 可不用单独下载.
+
+本文使用的是MikTex1.20e, CJK4.3.0(预发行版). 通过CJK使用汉字有多种
+办法, 这里介绍笔者认为是最简洁的一种. 如有不当, 请指正.
+
+2. 安装步骤
+
+2.1. 下载并安装miktex 1.20e
+    直接运行setup即可. 建议全装, 省心. 注意在最后一步创建用户texmf
+    目录时, 将目录名"localtexmf"改为"mytexmf". 如果你想装CCT就会用上.
+    修改autoexec.bat, 将目录c:\texmf\miktex\bin加入path, 重新启动.
+
+2.2 修改miktex的配置文件
+    文件名 c:\texmf\miktex\config\miktex.ini
+    找到这一行:
+       TTFPath=.;%R\fonts\truetype;//
+     改为:
+       TTFPath=.;%R\fonts\truetype;c:\windows\fonts//
+
+2.3 安装CJK
+    下载安装包: <A href="http://obase.163.net/tex/CJK_TTF_GBK_install.zip">http://obase.163.net/tex/CJK_TTF_GBK_install.zip</A> (329K)
+    解开后, 只需将CJK目录整体复制到相应位置:
+       CJK  =&gt; c:\mytexmf\tex\latex
+    注意是连同CJK目录一起复制, 下同.
+
+2.4. 用ttfonts.map和pdftex.cfg分别替换这两个文件:
+       c:\texmf\ttf2tfm\base\ttfonts.map
+       c:\texmf\pdftex\config\pdftex.cfg
+
+2.5. 建立字体文件
+    下载字库包: <A href="http://obase.163.net/tex/enctfm.zip">http://obase.163.net/tex/enctfm.zip</A> (759K)
+    解压得到两个子目录:enc, tfm.
+    如果不下载, 可以自己做. 进入目录gbkenc, 依次执行如下命令:
+       gbkenc -c -gbk c:\windows\fonts\simfang.ttf fs
+       gbkenc -c -gbk c:\windows\fonts\simhei.ttf  hei
+       gbkenc -c -gbk c:\windows\fonts\simli.ttf   li
+       gbkenc -c -gbk c:\windows\fonts\simkai.ttf  kai
+       gbkenc -c -gbk c:\windows\fonts\simsun.ttf  song
+   这一过程比较长, 需耐心. 完成后将生成两个子目录:enc, tfm.
+
+   将两个子目录复制到相应位置:
+       enc   =&gt;  c:\mytexmf\dvips\chinese
+       tfm   =&gt;  c:\mytexmf\fonts\tfm\chinese
+
+2.6. 这里只提供了宋体, 仿宋, 楷体, 隶书, 黑体共5种字库文件,
+   因为这几个字体文件是每个中文Windows都有的. 如果要添加其它字体,
+   请按照如下步骤:
+   运行gbkenc, 将生成的文件复制到相应位置,
+   修改下面两个文件, 加入新字体定义:
+       c:\texmf\ttf2tfm\base\ttfonts.map
+       c:\texmf\pdftex\config\pdftex.cfg
+   建立c19???.fd文件, 保存到c:\mytexmf\tex\latex\CJK\GB
+   其中???为字体名.
+   详细的修改方法请参考其它文献, 如aloft和eggs的安装指南.
+
+2.7. MikTex刷新文件名数据库, 安装结束.
+
+3. 说明
+
+3.1 本文所述方法利用Windows的中文TTF字库生成tfm字库, 而不用庞大
+    的type1字库. 用latex file生成dvi文件之后, 用yap预览, 对没有
+    生成pk字库的汉字会自动临时生成, 因此开始运行时会比较慢.
+    当pk字库全部做好后, 速度就会相应提高.
+
+3.2 汉字编码采用GBK, 有6万多. 可以正常显示GB2312以外的汉字,
+    比如"鎔". 前提是提供的TTF字库是GBK编码的.
+
+3.3 TeX文件声明CJK格式时, 用:
+        \begin{CJK*}{GBK}{song}
+    而不用:
+        \begin{CJK*}[pmC]{GBK}{song}
+    这没有什么特别理由. 如果您喜欢用后者, 必须用gbkenc重新生成
+    字库文件, 命令行不要使用-c即可.
+
+3.4 文件编译时只需latex file即可. 生成pdf文件则为:pdflatex file,
+    一般没有问题. 但是CJK文档中指出, 应该先进行预处理. 如果你发现
+    确实有问题, 请将bin目录下的文件复制到c:\texmf\miktex\bin,
+    然后用gbklatex file生成dvi文件, 用gbkpdf file生成pdf文件.
+
+3.5 CJK提供cap文件机制控制文档格式, 本身提供的gb.cap功能比较弱,
+    可以用aloft写的gb_aloft.cap替换.
+
+3.6 hyperref目前还不能配合pdflatex, 处理中文bookmark. 不过作者
+    Heiko已经给了个解决方案!!! 配合aux2out(在"我的软件"页面),
+    即可处理中文bookmark!
+
+4. 结束语
+
+本人急需排毕业论文, 匆匆学习TeX排版, 经验不足. 本文只是一点经验
+总结, 一方面做个备忘录, 同时希望抛砖引玉, 大家一起使用TeX, 排出
+美观规范的文档. 有关CJK, MikTex等的问题, 请参考其它文献.
+
+另外, 如有问题, 请尽量与3月份之后提出, 现在排论文焦头烂额中:P
+
+written by energy, 2000.1.12
+email: obase@163.net
+www  : <A href="http://obase.163.net/">http://obase.163.net/</A>
+energy                          <A href="mailto:obase@163.net">mailto:obase@163.net</A>
+
+
+
+
+</PRE><!--X-Body-of-Message-End--><!--X-MsgBody-End--><!--X-Follow-Ups-->
+<HR>
+
+<TABLE border=0>
+  <TBODY>
+  <TR>
+    <TD>[<A href="http://www.ctex.org/documents/maillist/msg00007.html">Date 
+      Prev</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/index79.html#00008">Date 
+      Index</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/msg00009.html">Date Next</A>] 
+    </TD>
+    <TD width=20></TD>
+    <TD>[<A href="http://www.ctex.org/documents/maillist/msg00007.html">Thread 
+      Prev</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/threads.html#00008">Thread 
+      Index</A>] [<A 
+      href="http://www.ctex.org/documents/maillist/msg00009.html">Thread 
+      Next</A>] </TD></TR></TBODY></TABLE><!--X-Follow-Ups-End--><!--X-References--><!--X-References-End--><!--X-BotPNI-->
+<P>Copyright&copy;2000-2002 CTEX.ORG, All Rights Reserved<BR>版权所有 <A 
+href="http://www.ctex.org/">CTEX.ORG</A> <!--X-BotPNI-End--><!--X-User-Footer--><!--X-User-Footer-End--></P></BODY></HTML>

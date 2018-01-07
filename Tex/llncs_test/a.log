@@ -1,0 +1,325 @@
+This is TeX, Version 3.141592 (MiKTeX 2.3) (preloaded format=latex 2000.11.28)  4 OCT 2003 22:41
+**a.tex
+(a.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for english, french, german, ngerman, du
+mylang, nohyphenation, loaded.
+(llncs.cls
+Document Class: llncs 1998/03/25 v2.3 
+LaTeX document class for Lecture Notes in Computer Science
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\base\article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\base\size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\tools\multicol.sty
+Package: multicol 2000/07/10 v1.5z multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen108
+\multicolovershoot=\dimen109
+\multicolundershoot=\dimen110
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+\c@chapter=\count95
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 193.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 195.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 196.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 197.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 198.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 199.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 200.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 201.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 203.
+\tocchpnum=\dimen111
+\tocsecnum=\dimen112
+\tocsectotal=\dimen113
+\tocsubsecnum=\dimen114
+\tocsubsectotal=\dimen115
+\tocsubsubsecnum=\dimen116
+\tocsubsubsectotal=\dimen117
+\tocparanum=\dimen118
+\tocparatotal=\dimen119
+\tocsubparanum=\dimen120
+\@tempcntc=\count96
+\c@@inst=\count97
+\c@@auth=\count98
+\c@auco=\count99
+\instindent=\dimen121
+\authrun=\box52
+\authorrunning=\toks14
+\tocauthor=\toks15
+\titrun=\box53
+\titlerunning=\toks16
+\toctitle=\toks17
+\c@theorem=\count100
+\c@case=\count101
+\c@conjecture=\count102
+\c@corollary=\count103
+\c@definition=\count104
+\c@example=\count105
+\c@exercise=\count106
+\c@lemma=\count107
+\c@note=\count108
+\c@problem=\count109
+\c@property=\count110
+\c@proposition=\count111
+\c@question=\count112
+\c@solution=\count113
+\c@remark=\count114
+\headlineindent=\dimen122
+)
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\base\makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(D:\PROGRA~1\CTEX\MiKTeX\LocalTeXMF\tex\latex\CJK\CJK.sty
+Package: CJK 1999/06/20 4.3.0
+
+(D:\PROGRA~1\CTEX\MiKTeX\LocalTeXMF\tex\latex\CJK\CJK.enc
+File: CJK.enc 1999/06/20 4.3.0
+LaTeX Font Info:    Redeclaring font encoding C49 on input line 519.
+LaTeX Font Info:    Redeclaring font encoding C42 on input line 520.
+)
+LaTeX Info: Redefining \selectfont on input line 646.
+)
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\generic\misc\psfig.sty
+\@unused=\write3
+\ps@stream=\read1
+\p@intvaluex=\dimen123
+\p@intvaluey=\dimen124
+
+psfig/tex 1.10-dvips
+) (D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\graphics\graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2003/03/12 v1.1 MiKTeX 'graphics' configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(D:\PROGRA~1\CTEX\MiKTeX\TeXMF\tex\latex\graphics\dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+) (a.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+
+Package CJK Warning: \MakeUppercase disabled for `GBK' encoding.
+
+(D:\PROGRA~1\CTEX\MiKTeX\LocalTeXMF\tex\latex\CJK\standard.bdg
+File: standard.bdg 1999/06/20 4.3.0
+)
+(D:\PROGRA~1\CTEX\MiKTeX\LocalTeXMF\tex\latex\CJK\extended.enc
+File: extended.enc 1999/06/20 4.3.0
+)
+(D:\PROGRA~1\CTEX\MiKTeX\LocalTeXMF\tex\latex\CJK\extended.chr
+File: extended.chr 1999/06/20 4.3.0
+)
+LaTeX Font Info:    Try loading font information for C19+song on input line 27.
+
+
+(D:\PROGRA~1\CTEX\MiKTeX\LocalTeXMF\tex\latex\CJK\GB\c19song.fd
+File: c19song.fd 1999/06/20 4.3.0
+) [1
+
+
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 66.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 66.
+ [2
+
+]
+[3] (a.toc)
+\tf@toc=\write4
+ [4
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 215.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 215.
+ [1
+
+] [2] [3] [4] [5] [6] [7]
+File: g:/temp/test.ps Graphic file (type eps)
+ <g:/temp/test.ps>
+Overfull \hbox (233.04396pt too wide) in paragraph at lines 785--787
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 261.89172pt on input line 787.
+
+[8] [9] [10
+
+] [11] [12] [13]
+No file a.ind.
+(subjidx.ind
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]\OT1/cmr/m/n/9 Angular mo-men-tum states 107, 321,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+[]\OT1/cmr/m/n/9 Brillouin-Wigner per-tur-ba-tion the-ory
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+[]\OT1/cmr/m/n/9 Exchange term 228, 231, 237, 241, 268,
+ []
+
+) [14
+
+
+] (a.aux) ) 
+Here is how much of TeX's memory you used:
+ 1957 strings out of 96044
+ 20313 string characters out of 1196452
+ 81914 words of memory out of 1078436
+ 4838 multiletter control sequences out of 35000
+ 10850 words of font info for 38 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 607
+ 29i,10n,21p,329b,351s stack positions out of 1500i,500n,5000p,200000b,32768s
+
+Output written on a.dvi (18 pages, 49988 bytes).

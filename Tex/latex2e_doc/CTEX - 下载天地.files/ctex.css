@@ -1,0 +1,60 @@
+INPUT {
+	FONT-SIZE: 9pt; FONT-FAMILY: "宋体"
+}
+TD {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: "宋体"
+}
+P.header {
+	FONT-SIZE: 15pt; COLOR: #0000ff; FONT-FAMILY: "隶书", "宋体"
+}
+FIELDSET {
+	BORDER-RIGHT: #ff9933 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #ff9933 1px solid; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; BORDER-LEFT: #ff9933 1px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #ff9933 1px solid
+}
+.texcode {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #666666; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+.texpkg {
+	FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+P.description {
+	FONT-SIZE: 9pt; MARGIN: 5px; COLOR: #000000; FONT-FAMILY: "宋体"
+}
+A.legend:hover {
+	COLOR: #ff9933; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.legend {
+	COLOR: #000000; BACKGROUND-COLOR: #ff9933; TEXT-DECORATION: none
+}
+A.normal {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+A.normal:hover {
+	COLOR: #0066ff; TEXT-DECORATION: underline
+}
+LEGEND {
+	COLOR: #000000; BACKGROUND-COLOR: #ff9933
+}
+A.menu {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.menu:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.download {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+A.download:hover {
+	COLOR: #ff9933; TEXT-DECORATION: underline
+}
+A.doclink {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+A.doclink:hover {
+	COLOR: #0066ff; TEXT-DECORATION: underline
+}

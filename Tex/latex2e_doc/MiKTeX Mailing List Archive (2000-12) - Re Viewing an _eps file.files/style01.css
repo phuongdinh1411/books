@@ -1,0 +1,21 @@
+PRE {
+	FONT-SIZE: 12px; FONT-FAMILY: courier, times
+}
+P {
+	FONT-SIZE: 12px; FONT-FAMILY: arial, helvetica
+}
+.normal {
+	FONT-SIZE: 12px; FONT-FAMILY: arial, helvetica
+}
+UL {
+	FONT-SIZE: 12px; FONT-FAMILY: arial, helvetica
+}
+H2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 18px; COLOR: #790200; LINE-HEIGHT: 22px; FONT-FAMILY: arial, helvetica
+}
+.BAN1 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: arial, helvetica
+}
+.BAN2 {
+	FONT-SIZE: 12px; FONT-FAMILY: arial, helvetica
+}

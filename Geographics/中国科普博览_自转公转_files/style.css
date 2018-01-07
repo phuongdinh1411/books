@@ -1,0 +1,17 @@
+
+
+.line {font-size:13px;font-family: "宋体";COLOR: 000000} 
+
+.byd_up1_include {
+	background-color: #000000;
+}
+
+A.navfont:link    {font-size:13px;font-family: "宋体";COLOR: 000000; TEXT-DECORATION: none} 
+A.navfont:visited {font-size:13px;font-family: "宋体";COLOR: 000000; TEXT-DECORATION: none}
+A.navfont:active  {font-size:13px;font-family: "宋体";COLOR: cc0033; TEXT-DECORATION: none}
+A.navfont:hover   {font-size:13px;font-family: "宋体";COLOR: cc0033; TEXT-DECORATION: none}
+
+A.index1:link    {font-size:13px;font-family: "宋体";COLOR: 000000; TEXT-DECORATION: none} 
+A.index1:visited {font-size:13px;font-family: "宋体";COLOR: 000000; TEXT-DECORATION: none}
+A.index1:active  {font-size:13px;font-family: "宋体";COLOR: cccc00; TEXT-DECORATION: none}
+A.index1:hover   {font-size:13px;font-family: "宋体";COLOR: cccc00; TEXT-DECORATION: none}

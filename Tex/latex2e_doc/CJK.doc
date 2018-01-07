@@ -1,0 +1,847 @@
+
+This is the LaTeX2e style package CJK Version 4.1.3 (20-Jun-1997)
+=================================================================
+
+It is freely distributable under the GNU Public License.
+
+
+        **************************************************
+        *                                                *
+        * You need LaTeX 2e version 1996/12/01 or newer! *
+        *                                                *
+        **************************************************
+
+
+Use
+---
+
+Use CJK.sty as a package, e.g.
+
+    \documentclass{article}
+    \usepackage{CJK}            .
+
+Two new environments,
+
+    \begin{CJK}[<fontencoding>]{<encoding>}{<family>}
+    ...
+    \end{CJK}
+
+and
+
+    \begin{CJK*}[<fontencoding>]{<encoding>}{<family>}
+    ...
+    \end{CJK*}
+
+are defined. The parameters have the following meaning:
+
+    <encoding>      the following encodings are currently implemented in
+                    CJK.enc:
+
+                        Bg5  (Big 5)
+                        GB   (GuoBiao with simplified characters,
+                              G1 = GB 2312-80)
+                        GBt  (GuoBiao with traditional characters,
+                              G1 = GB 12345-90)
+                        JIS  (Japanese Industry Standard,
+                              G1 = JIS X 0208-1990)
+                        JIS2 (JIS supplementary character set,
+                              G1 = JIS X 0212-1990)
+                        SJIS (Shift-JIS aka MS-kanji,
+                              1 byte characters from JIS X 0201-1976,
+                              2 byte characters from JIS X 0208-1990)
+                        KS   (Korean Standard hangul and hanja,
+                              G1 = KSC 5601-1987)
+                        UTF8 (UTF 8 (Unicode Transformation format 8), also
+                              called UTF 2 or FSS-UTF)
+
+                        CNS1 (Chinese National Standard Plane 1,
+                              G1 = CNS 11643-1992 plane 1
+                        CNS2
+                        ...
+                        CNS7 (plane 2 - 7)
+
+                        CEFX (reserved CEF encoding for IRIZ)
+                        CEFY (private CEF encoding)
+
+                    The encodings (except Big 5, SJIS, and UTF 8) are
+                    simplified EUC (Extended UNIX Code) character sets
+                    without single shifts. The character set slot G1 stands
+                    for two byte encodings with byte values taken from the
+                    GR (Graphic Right) character range 0xA1-0xFE (as defined
+                    in ISO 2022).
+
+                    Note that CNS1 and CNS2 contain almost the same
+                    characters in the same order as Big 5 (but in EUC).
+
+                    For CEF and CNS encodings see CEF.doc also.
+
+                    If you use this parameter it's the same as you would
+                    have used \CJKenc.
+
+    <fontencoding>  These font encodings are currently defined: `' (empty;
+                    the default), `pmC' (available for Bg5, GB, GBt, JIS,
+                    and KS), `dnp' and `wn' (for JIS), `HL' (for KS).
+
+                    Fontencoding means the order of characters in the
+                    subfonts itselves; encoding means mapping of the coding
+                    space onto the CJK fonts. A change of the font encoding
+                    will not alter the meaning of a CJK character.
+
+                    The font encoding `pmC' is defined for compatibility
+                    with the pmC package. It's not encouraged to use these
+                    encodings because of wasting fonts. If possible, convert
+                    your original CJK fonts with hbf2gf (see hbf2gf.doc)
+                    or other tools to CJK encodings.
+
+                    `dnp' implements the character order of the Dai Nippon
+                    Printing fonts and is only available for JIS encoding.
+                    `wn' is the font encoding for watanabe jfonts. There
+                    exists a linking package which maps the watanabe jfonts
+                    onto the dnp naming scheme (thus you can use the real
+                    dnp fonts for printing and the mapped jfonts for
+                    previewing). See the documentation files in the
+                    `japanese' subdirectory for further details.
+
+                    `HL' allows the use of the new HLaTeX-fonts; note that
+                    the definition of fonts is rather different compared to
+                    HLaTeX. See the section `Korean input' below for a
+                    detailed description.
+
+                    You can change the font encoding per encoding with the
+                    command \CJKfontenc; the first parameter is the
+                    encoding, the second the font encoding.
+
+    <family>        It is impossible to know what fonts are available at
+                    your site; look at the example .fd-files how to create
+                    or modify appropriate .fd-files suiting your needs. See
+                    fonts.doc also for further hints.
+
+                    If this parameter is empty, the default value given in
+                    CJK.enc is selected: `song' for all encoding except KS
+                    (which has `mj'). If you use this parameter it's the
+                    same as you would have used \CJKfamily: all encodings
+                    will then use this family.
+
+                    You can change the families per encoding (and font
+                    encoding) with the command \CJKencfamily; the first
+                    parameter is the encoding, the second the family, the
+                    optional argument is the font encoding. This will
+                    override the default value.
+
+                    Note that \CJKfamily or a non-empty `family' parameter
+                    of the CJK environment will override any \CJKencfamily
+                    commands. Say `\CJKfamily{}' to enable \CJKencfamily
+                    again.
+
+
+    The CJK* environment will swallow unprotected spaces and newlines after
+    a CJK character (the usual habit for Chinese and Japanese text), whereas
+    CJK will not (for European and Korean text). You can change between
+    these two `modes' with \CJKspace (CJK* -> CJK) and \CJKnospace
+    (CJK -> CJK*).
+
+    If you use cjk-enc.el, you don't need to specify a CJK environment. This
+    will be done automatically. See cjk-enc.doc for details.
+
+
+This is a typical example:
+
+    \begin{CJK*}{GB}{kai}
+    ...
+    Text in GuoBiao encoding
+    ...
+    \end{CJK*}
+
+
+How it works
+------------
+
+Asiatic logographs can't be represented completely with one byte per
+character. (At least) two bytes are needed, and the most common encoding
+schemes (GB, Big 5, JIS, KS etc.) have a certain range for the first byte
+(usually 0xA1-OxFE or a part of it) which signals that this and the next
+byte represents an Asiatic logograph. This means that plain ASCII-characters
+(i.e. characters between 0x00 and 0x7F) will be left undisturbed, and most
+characters of the extended ASCII character set (0x80-0xFF) will be assigned
+to a CJK encoding.
+
+CJK.sty makes the characters 0x81-0x9F and 0xA1-OxFE active inside of the
+CJK environment and assigns macros to the active characters which will then
+select the proper font and character. The real mechanism is a bit more
+complex to assure robustness (it was borrowed and modified from LaTeX 2e's
+inputenc.sty) and correct handling of punctuation characters.
+
+The remaining characters 0x80 and 0xA0 in the extended ASCII area are made
+active also and will be used with cjk-enc.el and cefconv respectively. The
+last remaining character 0xFF will be used as a delimiter.
+
+*   emTeX users: you must activate 8bit input and output while creating the
+*   LaTeX2e format file! These are the switches -o and -8 (additional to
+*   the iniTeX switch -i)
+*
+*   example:
+*
+*       tex386 -i -o -8 latex.ltx
+
+
+Some internals
+--------------
+
+Internally three levels (bindings, encodings, character macro sets) are
+defined:
+
+        active characters
+            |
+            +--------------> bindings (standard, SJIS, UTF8)
+            |
+        active character macros
+            |
+            +--------------> encodings (GB, Big 5, ...) + 
+            |                font encodings (none, dnp, wn, pmC, HL)
+            |
+        subfont selecting macros
+            |
+            +--------------> character macro sets (standard, Big 5, ...)
+            |
+        character selecting macros
+
+User selectable are only the encoding and the font encoding (as explained
+above); the other levels will be selected by the CJK package.
+
+These levels correspond to the following internal macros:
+
+\CJK@xxxxBinding (.bdg-files):
+    possible values for `xxxx' are: standard, SJIS, and UTF8.
+
+\CJK@xxxxEncoding (.enc-files):
+    possible values for `xxxx' are: standard, Bg5, SJIS, KS, UTF8, pmCsmall,
+    pmCbig, JISdnp, and KSHL.
+
+\CJK@xxxxChr (.chr-files):
+    possible values for `xxxx' are: standard, Bg5, KS, SJIS, UTF8, pmC, and
+    HLaTeX.
+
+
+And now a more detailed description of the various encodings:
+
+\CJK@standardEncoding will be used for EUC encodings with the second byte in
+the range 0xA1-0xFE (GB, JIS, JIS2, CNS).
+
+\CJK@Bg5Encoding will be used for Big 5 encoding (e.g. NTU fonts) with the
+second byte in the range 0x40-0xFE.
+
+\CJK@SJISEncoding will be used for SJIS encoding; one byte characters are in
+the range 0xA1-0xDF, two byte characters have the first byte in the ranges
+0x81-0x9F and 0xE0-0xEF, the second byte runs from 0x40 to 0xFC except 0x7F.
+Since SJIS only squeezes the JIS encoding into a new scheme without changing
+the ordering, fonts produced by hbf2gf will look the same for JIS and SJIS
+except the one byte SJIS characters. For more details see below.
+
+\CJK@KSEncoding will be used for KS encoding. Two sets of subfonts are
+defined, one for Hangul syllables and elements, and a second for Hanja. For
+more details see below.
+
+\CJK@UTF8Encoding will be used for Unicode in UTF 8 encoding. The first byte
+is in the range 0xC0-0xDF for two byte values and in the range 0xE0-0xEF for
+three byte values. The other byte(s) are in the range 0x80-0xBF. Note that
+CJK expects two hexadecimal digits as a running number in the font name
+instead of two decimal digits (as defined in UTF8.enc). Select the option
+`unicode yes' in the hbf2gf config file if you use hbf2gf to transform
+bitmap fonts in HBF format to .pk fonts as used by CJK.sty . Three commands
+(\CJKCJKchar, \CJKhangulchar and \CJKlatinchar) control the handling of
+intercharacter glue: \CJKCJKchar (the default) selects CJK style (using
+\CJKglue), \CJKhangulchar selects hangul style (using \CJKtolerance), and
+\CJKlatinchar selects none of them. This is the only encoding which will not
+work in preprocessed mode.
+
+\CJK@pmCsmallEncoding and \CJK@pmCbigEncoding can be activated with
+\pmCsmall (this is the default) and \pmCbig inside the CJK environment. Note
+that the original pmC fonts have two character sizes per font (the bigger
+ones with an offset of -128); Bg5pmC encoded fonts cannot contain big
+characters. The names of the fonts in the .fd-files reflect the
+modifications added by Marc Leisher <mleisher@nmsu.edu> to the original poor
+man's Chinese (pmC) package written by Thomas Ridgeway
+<ridgeway@blackbox.hacc.washington.edu>.
+
+\CJK@JISdnpEncoding is JIS encoding with dnp fonts. The main difference
+(besides the offsets) is the composition of real font names; a dnp font name
+consists of name stem + subfont name + designsize: an example is dmjkata10.
+\CJK@JISwnEncoding is similar to JISdnp encoding but uses Watanabe jfonts.
+
+\CJK@KSHLEncoding finally uses the new fonts of the HLaTeX package; four
+internal encodings are necessary to represent it. See the next section for
+details.
+
+
+Korean input
+------------
+
+There is already a package which handles Hangul and Hanja: HLaTeX 0.95
+(this version merges hlatex and jhtex).
+
+The main difference between HLaTeX and the standard processing of KS in CJK
+is the use of 11 real fonts containing Hangul syllables (HLaTeX), whereas
+the CJK package uses 11 virtual fonts to define Hangul syllables which map
+to two fonts containing Hangul `elements'.
+
+
+To use KS encoding, say
+
+    \begin{CJK}{KS}{}
+    ...
+    \end{CJK}       .
+
+These font switches are available inside the environment:
+
+    fonts from former hlatex (in the han font packages):
+
+    *   \mj  MyoungJo   (default)
+        \gt  Gothic
+        \gs  BootGulssi
+        \gr  Graphic
+        \dr  Dinaru
+
+    fonts from former jhtex (in the han1 font packages):
+
+    *   \hgt Hangul Gothic
+    *   \hmj Hangul MyoungJo (MunHwaBu fonts)
+    *   \hpg Hangul Pilgi
+        \hol Hangul Outline (MyoungJo)
+
+
+If a font is marked with a star, real bold series are available. All other
+bold fonts are defined using poor-man's boldface (see below).
+
+See the file INSTALL how to get these fonts.
+
+Note that the font switches are abbreviations for \CJKencfamily and not for
+\CJKfamily.
+
+
+For characters with the first byte in the ranges 0xA1-0xAF (except 0xA4) and
+0xC9-0xFD (graphic characters, hanja, archaic hangul etc.) fonts with the
+encoding C60 are used. C61 is assigned to hangul fonts (for hangul elements
+with the first byte 0xA4 and hangul characters in the range 0xB0-0xC8). This
+enables the use of many hangul fonts and perhaps only one or two different
+hanja fonts. If you want to use C60 encoding for hangul characters also say
+\CJKhanja. The opposite command is \CJKhangul (of course this works only if
+you have hangul characters in the C60 font).
+
+Archaic hangul elements (KS 0xA4D5-0xA4FE) and the character KS 0xA4D4 are
+only accessible if \CJKhanja is active.
+
+You should convert your KS hanja fonts using hbf2gf as described above.
+
+
+To use HLaTeX fonts, say
+
+  \begin{CJK}[HL]{KS}{}
+  ...
+  \end{CJK}         .
+
+
+These font switches are available inside the environment:
+
+        \gr     Graphic
+    **  \gs     Gungseo
+  + *   \gt     Gothic
+    **  \mg     Mokgak
+  + *   \mj     Myuongjo
+        \ol     Outline
+    **  \yt     Yetgul
+
+If a font is marked with a star, real bold series are available. All other
+fonts are defined using poor-man's boldface (see below). If a font is marked
+with two stars, only boldface is available. Only fonts marked with a plus
+sign are available for hanja. The other font families are mapped to these
+two hanja families.
+
+If you use the package pshan.sty, PostScript fonts will be used. All bold
+series are defined as poor-man's boldface. This package must be called
+after CJK.sty has been loaded.
+
+Un Koaung-Hi <koaunghi.un@zdv.uni-tuebingen.de>, the author of HLaTeX,
+defines three groups of fonts: hangul, hanja, and symbols. He squeezes the
+symbols of the KS planes 0xA1-0xAC into two symbol fonts (by omitting some
+not so important glyphs). The CJK package needs four internal encodings (C63
+for hanja, C64 for hangul, C65 and C66 for the first (J) and second (K)
+symbol font respectively) to represent the font encoding scheme of HLaTeX.
+
+HLaTeX options:
+
+`pshan' has been realized as a package `pshan.sty', the option `hardbold'
+has been integrated into the .fd-files---I consider the fact whether you
+have bold series available or not as a fundamental local font setup decision
+which should be coded into the .fd-files and not into the document. As a
+consequence you have to change your .fd-files to emulate the `softbold'
+option with CJK's poor-man's boldface. Example:
+
+    \DeclareFontShape{C64}{gt}{bx}{n}{<5-25> CJK * wsgtb}{}
+
+should be changed to
+
+    \DeclareFontShape{C64}{gt}{bx}{n}{<5-25> CJKb * wsgt}{\CJKbold} .
+
+and similar font definitions too.
+
+[Well, it's not really necessary to modify the .fd files to emulate the
+ `softbold' option: just insert the appropriate \DeclareFontShape and/or
+ \DeclareFontFamily commands in the preamble of your text :-) Nevertheless
+ you should think about this carefully---would you do this for, say, CM
+ fonts too?]
+ 
+
+The option `oldhan' is not supported---simply use ordinary KS encoding :-)
+For captions (corresponding to the `hanja' option) see below.
+
+Finally a warning: please bear in mind that CJK does not emulate the
+behaviour of HLaTeX, it only supports its fonts.
+
+
+Big 5 encoding
+--------------
+
+See below for the preferred input method using bg5conv.
+
+The characters \, {, and } are used as second bytes in the Big 5 encoding
+which collide with TeX. If you write Big 5 text mixed with other encodings
+(and you don't want/can't use MULE or bg5conv), you should use the Bg5text
+environment which changes the category codes of these characters. The
+command prefix is now the forward slash `/', and the grouping characters are
+`(' and `)' respectively.
+
+An example:
+
+            \begin{CJK}{Bg5}{song}
+            \begin{Bg5text}
+            ....
+            /begin(center)
+            ....
+            /end(center)
+            ....
+            /end(Bg5text)
+            \end{CJK}
+
+To get the `/', `(', and `)' characters, write `//', `/(', and `/)' inside
+the Bg5text environment.
+
+This environment is ugly, and some commands like \newcommand will not work
+in it. Starting with version 3.0 it's also possible to use different
+encodings in preprocessed mode, thus this environment is almost obsolete. It
+makes only sense in the unlikely case that you want to mix Big 5 with SJIS
+or UTF8 or that you want to include a short Big 5 fragment in a LaTeX 2e
+document without using the preprocessor.
+
+Instead of using the Bg5text environment you can protect the offending
+second bytes with a backslash, i.e. \{, \}, \\ (using a non-Chinese editor).
+This will not increase the readability of the Chinese text, but for short
+texts it's perhaps more comfortable. Alas, it doesn't work in page header
+commands because the macros \{ etc. will not be expanded.
+
+Be careful not to use any commands inside the Bg5text environment which
+write something into an external file (commands like \chapter etc.).
+ 
+If it's not possible to avoid Big 5 character codes with \, {, or } outside
+of the Bg5text environment (e.g. having Big 5-text in a \chapter or \section
+command), you can replace them with the \CJKchar macro manually:
+
+    \section{This is a problematic Big 5 character: \CJKchar{169}{92}}
+
+The parameters are the first and second byte of the Big 5 character code.
+You can also use hexadecimal or octal notation. See commands.doc for a full
+description.
+
+
+SJIS encoding
+-------------
+
+See below for the preferred input method using sjisconv.
+
+Shift-JIS encoding is widely used on PCs. A special feature is the
+simultaneous use of one and two byte encoded characters which arose because
+of backward compatibility. The two byte encoded character set is completely
+identical to the JIS character set, even the ordering is the same. Thus
+there is no need for special two byte SJIS .fd-files; the font definition
+files for JIS will be used.
+
+The situation is different for one byte SJIS characters, the so called
+`half-width' Katakana (encoding C49). Usually you will use full-width
+Katakana fonts too to get a typographically correct output. The exception is
+a typewriter font which should really have only the half width of normal
+Kanji or Katakana to represent screen snapshots or similar things.
+
+Fonts defined in C49 encoding scheme must have the characters glyphs at the
+coding points 0xA1-0xDF.
+
+An environment `SJIStext' similar to `Bg5text' will be defined; the same
+restrictions as explained in the previous section hold.
+ 
+
+CJK captions
+------------
+
+To use the supplied caption files you will need the koma-script package. The
+main reason why I choose these style files instead of the standard classes
+is the fact that the author of koma-script is willing to support CJK. It's
+very difficult to move the LaTeX 2e dinosaurus into a certain direction---
+after years of digesting drafts there maybe are visible results of the
+internationalization group (this slow movement has of course benefits, but I
+want to see results now).
+
+The koma-script style files are maintained by Markus Kohm
+(Markus_Kohm@hd.maus.de) and available at the CTAN hosts.
+
+
+If you say \CJKcaption{<caption>} inside of a CJK environment, the file
+<caption>.cap will be loaded.
+
+Example:
+
+    \documentclass{scrartcl}%   this is a KOMA-script class
+    \usepackage{CJK}
+
+    \begin{document}
+    \begin{CJK*}{GB}{kai}
+    \CJKcaption{GB}%            loading GB.cap
+
+    \chapter{blablabla}%        will be formatted in Chinese
+
+    ....
+
+    \end{CJK*}    
+    \end{document}
+
+
+Note that for Korean three caption files are available: hanja.cap for
+caption using hanja (this corresponds to HLaTeX's `hanja' option) and
+two caption files (hangul.cap and hangul2.cap) using hangul.
+
+
+Poor-man's boldface
+-------------------
+
+Most CJK fonts available in the public domain do not have bold series. To
+emulate boldface by printing the character three times with slight
+horizontal offsets some changes in the CJK package have been done:
+
+    CJK now uses \CJKsymbol internally instead of \symbol to access CJK
+    characters (after the correct font has been selected). This macro
+    honours the \ifCJK@bold@ flag; if set it will emulate boldface. The
+    default value of the horizontal offset is 0.015em; to change it you
+    should redefine \CJKboldshift, the macro which holds this shift.
+
+    \ifCJK@bold@ can be set and unset globally with the commands \CJKbold
+    and \CJKnormal. These commands are intended to be used with
+    \DeclareFontShape as follows:
+
+        \DeclareFontShape{C00}{CNS}{m}{n}{<-> CJK * csso12}{}
+        \DeclareFontShape{C00}{CNS}{bx}{n}{<-> CJKb * csso12}{\CJKbold}
+
+    It should be never necessary to use \CJKnormal since \selectfont has
+    been modified to always reset \ifCJK@bold@ and to call the
+    loading-settings (i.e. the sixth parameter) of \DeclareFontShape.
+
+    Additionally four size functions (CJKb, sCJKb, CJKfixedb, sCJKfixedb)
+    has been introduced which are completely identical to its counterparts
+    without the final `b'. The only reason to use them is, as shown in the
+    above example, to make the fifth parameter of \DeclareFontShape for bold
+    series different from the one for medium series (LaTeX 2e uses this
+    parameter as a macro name to execute loading-settings, thus they must
+    not be equal).
+
+
+Embedding non-CJK words into CJK text
+-------------------------------------
+
+To enable line breaking you should separate non-CJK words and CJK characters
+with horizontal space. But the ordinary space character often looks bad
+because the surrounding CJK characters are printed almost side by side (the
+non-stretched value of \CJKglue is 0pt). Especially in extreme cases which
+happen in underfull \hbox commands a space character distorts the CJK text
+too much.
+
+If you say \CJKtilde, the active `~' character will not produce an
+unbreakable space; instead the following definition will be used:
+
+    \def~{\hspace{0.25em plus 0.125em minus 0.08em}}        .
+
+This defines a space which has a normal width of a quarter space. See
+the file japanese/shibuaki.doc for some further details.
+
+Here an example:
+
+        ThisIsChineseText~test~ThisIsChineseText
+
+                         ^^^^^^
+
+Simply use tilde characters instead of spaces.
+
+The original definition of `~' is available as \nbs (non-breakable space, a
+shorthand for the LaTeX command \nobreakspace). To return to the standard
+`~' macro say \standardtilde.
+
+Note that the opposite is not true: to embed CJK words into non-CJK text an
+ordinary space is optimal.
+
+If you use Mule please consider the use of cjktilde.el in /utils/lisp. This
+small package defines a minor mode (cjk-tilde-mode) which exchanges the
+space key with the tilde key. It's convenient to bind this mode to a key,
+e.g. C-insert.
+
+For AUCTeX you can also use cjkspace.el which is similar (but not identical)
+to cjktilde.el .
+
+
+bg5conv and sjisconv
+--------------------
+
+Using the Bg5text or SJIStext environment is a mess. Thus I wrote bg5conv.c
+and sjisconv.c, two preprocessors for Big 5 and SJIS characters to overcome
+the restrictions of the Bg5text and SJIStext environment. Compile them
+with
+
+  gcc -O -s -o bg5conv bg5conv.c
+  gcc -O -s -o sjisconv sjisconv.c
+
+The CJK package already contains precompiled binaries for use with DOS and
+OS/2; see the batchfiles bg5latex[.bat] etc. for an example how to use them.
+
+Each Big 5 character (each two byte encoded SJIS character) `XY' will be
+converted into the form `XZZZ^^FF'; ZZZ is the decimal equivalent of Y
+followed by a character with the hex value 0xFF. The use of bg5conv/sjisconv
+is completely transparent, no changes to your document are necessary.
+
+It is possible to mix Big 5 encoding with different encodings (except SJIS
+and UTF8) if bg5conv is used.
+
+To mix SJIS with other encodings (except Big 5 and UTF8) use sjisconv.
+
+If you use Big 5 encoding with MULE, it's not necessary to call bg5conv
+after the use of *cjk-coding* output encoding.
+
+Note: the OS/2 script files bg5latex.cmd etc. need REXX which you eventually
+      have to install first.
+
+
+Caveats
+-------
+
+    o   You can of course use CJK-environments inside of a CJK-environment,
+        but it is possible that you must increase the so called save size
+        (with emTeX you can adjust this with -ms=...).
+
+        The CJK package has optional arguments which control the scope of
+        CJK environments:
+
+            lowercase       If you want to use \lowercase with encodings
+                            inside CJK environments. You need less save size
+                            using the `encapsulated' option if `lowercase'
+                            is not set. You must use bg5conv (sjisconv) or
+                            cjk-enc.el to use Big 5 (SJIS) characters with
+                            this option.
+
+                            Use this with caution! All \lccode values in the
+                            range 0x80-0xFF are set to zero, thus disabling
+                            TeX's hyphenation mechanism for words which
+                            contain characters of this range (e.g. T1
+                            encoded words with accents).
+
+            global          \lccode (if `lowercase' set), \uccode, \catcode
+                            and the activation of the characters 0x81-0xFE
+                            will be globally modified (\lccode and \uccode
+                            reset to 0). This is the most economical mode
+                            concerning save size, but you can't have CJK
+                            environments inside of CJK environments or other
+                            environments which manipulate the character
+                            range 0x81-0xFE.
+
+                            All CJK font selection commands are globally too!
+
+                            Packages which change some of the above values
+                            only once (e.g. in the preamble) will also not
+                            work after the first use of a CJK environment.
+
+                            cjk-enc.el will automatically select this
+                            option.
+
+            local           \lccode (if `lowercase' set) and \uccode
+                            together with bindings will be modified
+                            globally. This is the default. You can stack CJK
+                            environments.
+
+            active          If activated, bindings will be local
+                            additionally. You will need this option if you
+                            want to mix preprocessed text with
+                            non-preprocessed text in nested CJK
+                            environments. This can happen if you merge texts
+                            in various encodings.
+
+            encapsulated    If you want to access e.g. EC fonts directly
+                            (i.e. without the macros defined in T1enc.def)
+                            or if you want to use a LaTeX 2e input encoding
+                            (outside of the CJK environment) with \uppercase
+                            and \lowercase (\MakeUppercase and
+                            \MakeLowercase) working correctly, you must use
+                            this option. All values mentioned above will be
+                            local, so you can stack environments. This
+                            option probably causes an overflow of the save
+                            size.
+
+                            Note: all macro packages which access EC fonts
+                            with the macros defined in t1enc.def will work
+                            in CJK environments! E.g. the command `"s' of
+                            german.sty works with \MakeUppercase too.
+
+
+        Say
+    
+            \usepackage[<option>]{CJK}
+
+        to activate <option>.
+
+    o   There is an other way to overcome the problem of stacked
+        environments. CJK implements four CJK attribute switches: \CJKenc,
+        \CJKfontenc, \CJKencfamily, and \CJKfamily; see commands.doc for a
+        detailed description. If you need two different encodings/families
+        at the same output line, you must use these macros.
+
+        An example for \CJKfamily:
+
+            \begin{CJK}{GB}{song}
+            ... Text in GB song ...  \CJKenc{GBt}
+            ... Text in GBt song ... \CJKfamily{kai}
+            ... Text in GBt kai ...
+            \end{CJK}
+
+        An example for \CJKencfamily:
+
+            \CJKencfamily{Bg5}{fs}%     fangsong
+            \CJKencfamily{GB}{kai}
+
+            \begin{CJK*}{}{}
+            \CJKenc{Bg5} ... Text in Big 5 fangsong ...
+            \CJKenc{GB}  ... Text in GB kai ...
+            \end{CJK*}
+
+        Contrary to \begin{CJK}{...}{...} it's not necessary to start a new
+        line in your TeX document file after \CJKenc.
+
+    o   A similar command to \CJKchar is \Unicode{byte1}{byte2} to access
+        Unicode characters (real Unicode values, not UTF 8 encoded Unicode)
+        directly; the parameters are the first (high) and second (low) byte
+        of the Unicode. \Unicode works only in UTF 8 encoding; in all other
+        encodings you must use \CJKchar[UTF8]{byte1}{byte2} instead.
+
+    o   CJK will disable \MakeUppercase (preserving the command as
+        \CJKuppercase) if you select Big 5 or SJIS encoding without using
+        bg5conv or sjisconv. This usually affects the headers of the
+        LaTeX 2e standard classes only.
+
+
+Possible errors
+---------------
+
+    o   If you write Chinese (or Japanese) text, don't forget to suppress
+        the linefeed character with a trailing `%' in the CJK environment,
+        otherwise you get unwanted spaces in the output. On the other side,
+        say `\ ' or something similar inside the CJK* environment to get a
+        space after a CJK character.
+
+    o   To suppress a line break before a CJK character, say \CJKkern. This
+        command prevents the insertion of \CJKglue before the CJK character.
+
+        You may wonder about the curious name: a small kern (2 sp) between
+        two CJK characters signales that the first one is a punctuation
+        character.
+
+    o   If you get the error message: "\CJK.... undefined" or other "...
+        undefined ..." messages and you can't find an error, try inserting
+        \newpage before saying \end{CJK} or \end{CJK*}. This can happen if
+        LaTeX 2e writes the headers (or footers) of a page containing CJK
+        characters after closing the CJK environment.
+
+    o   If you get overfull \hbox'es caused by CJK characters, try to
+        increase \CJKglue. It defines the glue between CJK characters; the
+        default definition is
+
+            \newcommand{\CJKglue}{\hskip 0pt plus 0.08\baselineskip}  .
+
+        \CJKglue will be inserted by CJK.sty between Chinese characters
+        (except punctuation characters as defined in the punctuation tables;
+        see CJK.enc for the lists). You should separate non-CJK text from
+        CJK characters with spaces to enable hyphenation, or you write
+        \CJKtilde and then use `~' instead of spaces to embed non-CJK text
+        into CJK characters.
+
+    o   If you get overfull \hbox'es caused by Hangul syllables, try to
+        increase \CJKtolerance. The default definition is
+
+            \newcommand{\CJKtolerance}{400}  .
+
+    o   It's not possible to start a new encoding inside of a verbatim
+        environment which has not been loaded before (CJK.sty will emit an
+        \input ... command which causes the encoding file to be printed
+        verbatim instead of being executed). In this case, write a proper
+        \CJKenc{...} command before opening the verbatim environment.
+
+        Example:
+
+            \CJKenc{JIS} % this loads standard.enc and standard.chr
+
+            \begin{verbatim}
+            ...
+            first time JIS characters appear
+            ...
+            \end{verbatim}
+
+
+        cjk-enc.el will do this automatically for you.
+
+    o   If you encounter a TeX stack overflow caused by
+        {\CJKenc{new_encoding} ....}, you should write
+
+            \CJKenc{new_encoding} ... \CJKenc{old_encoding}
+
+        instead of the group.
+
+    o   If you get an error message which looks like this:
+
+
+        ! Undefined control sequence.
+        try@size@range ...extract@rangefontinfo font@info
+                                                          <-*>@nil <@nnil
+
+
+        then you have used an unknown family for a CJK encoding.
+
+        Reason: If you declare an NFSS font encoding in the standard way the
+        corresponding .fd-file for the default font is loaded. For the CJK
+        package this would be almost 30 files which is inacceptable. To
+        avoid this overhead NFSS will be faked with some rudimentary
+        definitions just enough to pass the NFSS tests. Of course this has a
+        disadvantage: an unknown CJK family causes the above error instead
+        of switching to the fallback family usually defined with
+        \DeclareFontSubstitution. Nevertheless, replacing an undefined
+        series or shape works correctly.
+
+        The CJK package's default family value is `song' for all encodings
+        except KS; to avoid the error just described in cases you start an
+        environment with an empty family parameter XXXsong.fd files for all
+        encodings (except for KS) are provided.
+
+
+Author
+------
+
+Werner Lemberg <a7971428@unet.univie.ac.at>
+
+Kleine Beurhausstr. 1
+D-44137 Dortmund
+Germany
+
+Tel. +49 231 165290
+
+Please report any errors or suggestions to this email-address.
+
+
+---End of CJK.doc---

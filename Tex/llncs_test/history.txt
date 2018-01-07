@@ -1,0 +1,51 @@
+Version history for the LLNCS LaTeX2e class
+
+ date     filename      version   action/reason/acknowledgements
+----------------------------------------------------------------------------
+ 29.5.96  letter.txt      beta    naming problems (subject index file)
+                                  thanks to Dr. Martin Held, Salzburg, AT
+
+          subjindx.ind            renamed to subjidx.ind as required
+                                  by llncs.dem
+
+          history.txt             introducing this file
+
+ 30.5.96  llncs.cls               incompatibility with new article.cls of
+                                  1995/12/20 v1.3q Standard LaTeX document class,
+                                  \if@openbib is no longer defined,
+                                  reported by Ralf Heckmann and Graham Gough
+                                  solution by David Carlisle
+
+ 10.6.96  llncs.cls               problems with fragile commands in \author field
+                                  reported by Michael Gschwind, TU Wien
+
+ 25.7.96  llncs.cls               revision a corrects:
+                                  wrong size of text area, floats not \small,
+                                  some LaTeX generated texts
+                                  reported by Michael Sperber, Uni Tuebingen
+
+ 16.4.97  all files        2.1    leaving beta state,
+                                  raising version counter to 2.1
+
+  8.6.97  llncs.cls        2.1a   revision a corrects:
+                                  unbreakable citation lists, reported by
+                                  Sergio Antoy of Portland State University
+
+11.12.97  llncs.cls        2.2    "general" headings centered; two new elements
+                                  for the article header: \email and \homedir;
+                                  complete revision of special environments:
+                                  \newtheorem replaced with \spnewtheorem,
+                                  introduced the theopargself environment;
+                                  two column parts made with multicol package;
+                                  add ons to work with the hyperref package
+
+07.01.98  llncs.cls        2.2    changed \email to simply switch to \tt
+
+25.03.98  llncs.cls        2.3    new class option "oribibl" to suppress
+                                  changes to the thebibliograpy environment
+                                  and retain pure LaTeX codes - useful
+                                  for most BibTeX applications
+
+16.04.98  llncs.cls        2.3    if option "oribibl" is given, extend the
+                                  thebibliograpy hook with "\small", suggested
+                                  by Clemens Ballarin, University of Cambridge

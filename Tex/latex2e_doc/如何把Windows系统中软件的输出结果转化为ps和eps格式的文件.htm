@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://hepg.sdu.edu.cn/Service/tips/win.html -->
+<HTML><HEAD><TITLE>高能物理研究室Windows系统使用技巧</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY text=#0000a0 bgColor=#efffcf>
+<CENTER>
+<H1>高能物理研究室Windows系统使用技巧</H1></CENTER><A name=top>
+<H2>
+<OL>
+  <LI><A 
+  href="http://hepg.sdu.edu.cn/Service/tips/win.html#1">在Windows系统中使用网络共享硬盘</A>
+  <P></P>
+  <LI><A 
+  href="http://hepg.sdu.edu.cn/Service/tips/win.html#2">在Windows系统中使用网络打印机</A>
+  <P></P>
+  <LI><A 
+  href="http://hepg.sdu.edu.cn/Service/tips/win.html#3">在Windows系统中使用X-window仿真软件"exceed"</A>
+  <P></P>
+  <LI><A 
+  href="http://hepg.sdu.edu.cn/Service/tips/win.html#4">如何把Windows系统中软件的输出结果转化为ps和eps格式的文件</A>
+  <P></P></LI></OL></H2>
+<HR>
+
+<OL>
+  <LI>
+  <DL>
+    <DT><A name=1><FONT color=#bb1111>在Windows系统中使用网络共享硬盘 </FONT>
+    <DD>(1). 在Windows系统中使用Linux系统的网络共享硬盘<BR>由于计算机"hepg"(使用Linux操作系统)上运行了支持MS 
+    Windows的 SMB协议的Samba软件, 因此在高能物理研究室已联网的Windows计算机上 可以使用"hepg"上的硬盘. 
+    利用这一点我们可以在Windows系统中把文件 写到"hepg"的硬盘上, 从而避免因病毒等原因丢失自己的文件, 使文件更安全. 
+    具体的方法是:<BR>双击"网上邻居", 应显示出可共享资源的计算机名称, 其中应该有hepg, 如果上述操作找不到hepg, 
+    可试试下面的方法:<BR>在Windows环境里单击"开始"---&gt;"查找"---&gt;"计算机", 输入 要查找的计算名"hepg", 
+    开始查找, 应能找到hepg.<BR>找到hepg后, 双击"hepg"即显示出hepg上的共享资源, 单击其中的 
+    WIN并在"文件"菜单里选中"映射驱动器", 根据提示将它映射为本地 逻辑驱动器即可.<BR>映射完成后, 
+    以后使用Windows时就可以把Linux硬盘\\hepg\WIN当做 本地硬盘来使用了, 与使用其他硬盘没什么区别.<BR>(2). 
+    在Windows系统中使用其他Windows机器的网络共享硬盘也是 同上面的步骤一样.
+    <P></P></DD></DL>
+  <CENTER><A href="http://hepg.sdu.edu.cn/Service/tips/win.html#top"><IMG 
+  alt=" 返  回 " src="如何把Windows系统中软件的输出结果转化为ps和eps格式的文件.files/Top2.gif"></A> 
+  </CENTER><BR>
+  <LI>
+  <DL>
+    <DT><A name=2><FONT color=#bb1111>在Windows系统中使用网络打印机 </FONT>
+    <DD>Windows系统中一般已把网络打印机安装好, 直接使用即可. 使用方法是 在打印时选择打印机, 
+    选中已安装的网络打印机就可以打印了.<BR>若Windows系统中还没有安装好网络打印机, 
+    则可按下述的步骤安装:<BR>在Windows环境里单击"开始"---&gt;"设置", 在"设置"菜单里 双击"打印机", 
+    然后在"文件"菜单里选"安装新打印机", 按照系统的提示 选择合适的驱动程序, 在设备端口里填上网络共享打印机的共享名, 如: hepg上的HP 
+    Laserjet 6L的网络共享为"\\hepg\lp", 最后根据系统 的提示完成安装即可.
+    <P></P></DD></DL>
+  <CENTER><A href="http://hepg.sdu.edu.cn/Service/tips/win.html#top"><IMG 
+  alt=" 返  回 " src="如何把Windows系统中软件的输出结果转化为ps和eps格式的文件.files/Top2.gif"></A> 
+  </CENTER><BR>
+  <LI>
+  <DL>
+    <DT><A name=3><FONT color=#bb1111>在Windows系统中使用X-终端仿真软件"exceed" </FONT>
+    <DD>exceed是可运行于Windows98/95环境下的一个优秀的X-终端仿真 软件. 运行exceed之后, 
+    Windows98/95系统就变成了一台X-终端, 可以 登录到任何一台UNIX主机上运行, 就象一台真正的X-终端一样, 所不同 
+    的是此时该Windows98/95系统仍可正常运行其他的Windows应用程序, 如 Word, Origin, PhotoShop等等, 
+    不受任何影响, 真正享受多任务操作 系统的方便. <BR>exceed的使用非常简单, 如果系统中已安装设置好exceed, 则只需在 
+    开始菜单中选中exceed程序组, 接着选中其中的exceed程序开始执行 即可. exeed程序运行后会显示一个窗口, 其中列出了他发现的UNIX 
+    主机, 你只需双击你想要登录的主机就可进入该主机的登录画面, 
+    剩下的操作就和在UNIX主机完全一样了.<BR>如果Windows98/95系统还没有安装exceed, 那么安装它也很简单. 
+    HEPG的ftp服务器上就有该软件: ftp://hepg/pub/windows/win95/exceed/ 只需从上面的网址下载该软件, 
+    然后就可双击其中的setup图标进行 安装了. 安装完成之后要进行必要的设置, 设置时要注意XDMCM项要选择 Broadcast, 
+    同时要选择"Single window"项. </DD></DL>
+  <CENTER><A href="http://hepg.sdu.edu.cn/Service/tips/win.html#top"><IMG 
+  alt=" 返  回 " src="如何把Windows系统中软件的输出结果转化为ps和eps格式的文件.files/Top2.gif"></A> 
+  </CENTER><BR>
+  <LI>
+  <DL>
+    <DT><A name=4><FONT color=#bb1111>如何把Windows系统中软件的输出结果转化为ps和eps格式的文件 </FONT>
+    <DD>Windows系统中软件的输出结果可以转化为ps和eps格式的文件, 从而在unix系统中调用. 其基本 原理是: 
+    把这些软件的输出结果用Postscript(PS)打印机的驱动程序 输出到一个文件中. 具体的方法是: 在Windows系统中单击"开始" 菜单, 
+    选择"设置"---&gt;"打印机", 在打印机窗口中选择"新建", 根据系统提示安装打印机, 安装过程中在选择打印机时应选择 
+    "Postscript打印机", 有些系统(如Windows98)中没有"Postscript打印机" 这一选项, 
+    则可以选任何一种Postscript兼容的打印机, 如" IBM *****PS", 在选择设备端口时需选择"输出到文件", 安装完成后 
+    就可以打印测试页了, 将测试页输出的ps文件拷贝到unix系统中用 gv和mgv试一下看是否正常. 在实际的软件输出时只需要象使用 
+    普通的打印机一样用前面安装的postcript打印机打印输出结果, 就会自动产生所需的ps文件了. 有时输出的ps文件在unix系统中 工作不正常, 
+    这时可能需要在postscript打印机属性设置中选择 "Level 1"来取代缺省的"Level 2". 
+    <BR>若要输出eps格式的文件只需在postscript打印机属性设置中选择 "EPS"即可. </DD></DL>
+  <CENTER><A href="http://hepg.sdu.edu.cn/Service/tips/win.html#top"><IMG 
+  alt=" 返  回 " src="如何把Windows系统中软件的输出结果转化为ps和eps格式的文件.files/Top2.gif"></A> 
+  </CENTER><BR></LI></OL>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<P><BR>
+<CENTER><A href="http://hepg.sdu.edu.cn/Service/tips/win.html#top"><IMG 
+alt=" 返  回 " src="如何把Windows系统中软件的输出结果转化为ps和eps格式的文件.files/Top2.gif"></A> 
+</CENTER><BR></BODY></HTML>
